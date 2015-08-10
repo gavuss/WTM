@@ -5,6 +5,7 @@
  */
 package com.tsarevna.add_new_user;
 
+import com.tsarevna.pages.tsarevna_page.user.add_user.AddUserPage;
 import com.tsarevna.pages.tsarevna_page.user.user_list.UserListPage;
 import com.tsarevna.pages.tsarevna_page.user.user_list.user_table.UserTable;
 import com.tsarevna.users.Role;
@@ -45,4 +46,11 @@ public class AddUser extends Story {
 
     }
 
+    @Then("отобразилась ошибка <error>")
+    public void отобразилась_ошибка(String error) {
+        verify
+                .that(user.onDisplayed(AddUserPage.class).containsError(error))
+                .ifResultIsExpected("Отобразилась ошибка (" + error + ")")
+                .ifElse("Ошибка не отображается");
+    }
 }

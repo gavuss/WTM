@@ -29,15 +29,19 @@ public class AddUserForm extends UIBlock {
 
     @Step
     public AddUserForm fillAddUserForm(String fio, String nickName) {
-        userFio.enter(fio);
-        userNickname.enter(nickName);
+        if (!fio.equals("null")) {
+            userFio.enter(fio);
+        }
+        if (!nickName.equals("null")) {
+            userNickname.enter(nickName);
+        }
+
         return this;
     }
 
     @Step
     public UserListPage addUser(String fio, String nickName) {
-        return fillAddUserForm(fio, nickName)
-                .addButton.click();
+        return fillAddUserForm(fio, nickName).addButton.click();
     }
 
     public static class AddButton extends Button {
