@@ -24,12 +24,23 @@ public class AddUserPage extends AtmPage {
 
     public boolean containsError(String error) {
 
-        for (TextBlock err : errors) {
-            // System.out.println("*************************************");
-            // System.out.println(err.getWrappedElement().getText());
-            if (err.getWrappedElement().getText().equals(error)) {
-                return true;
+        String allErrorsFromElements = "";
+        
+        for (int index = 0; index < errors.size(); index++) {
+            /*System.out.println("for cycle");
+            System.out.println(errors.get(index).getWrappedElement().getText());
+            System.out.println(error);*/
+            
+            if (index == 0) {
+                allErrorsFromElements = errors.get(index).getWrappedElement().getText();
+            } else {
+                allErrorsFromElements += ", " + errors.get(index).getWrappedElement().getText();
             }
+        }
+        
+        System.out.println(allErrorsFromElements);
+        if (allErrorsFromElements.equals(error)) {
+            return true;
         }
         return false;
     }
