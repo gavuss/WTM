@@ -6,6 +6,7 @@
 package com.tsarevna.pages.tsarevna_page.navigation_block.settings_dropdowm;
 
 import com.tsarevna.pages.tsarevna_page.admin.add_admin.LinkAddAdminPage;
+import com.tsarevna.pages.tsarevna_page.admin.admin_list.LinkAdminListPage;
 import com.uisteps.thucydides.user.browser.pages.UIBlock;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,8 +17,8 @@ import org.openqa.selenium.support.FindBy;
 @FindBy(css = ".dropdown-menu")
 public class SettingsMenuItems extends UIBlock {
 
-    //@FindBy(css = "a[href$='/admins']")
-    //public LinkAdminListPage adminListItem;
+    @FindBy(css = "a[href$='/admins']")
+    public LinkAdminListPage adminListItem;
     
     @FindBy(css = "a[href$='/addAdmin']")
     public LinkAddAdminPage addAdminItem;

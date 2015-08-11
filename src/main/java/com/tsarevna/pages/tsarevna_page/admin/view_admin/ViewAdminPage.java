@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsarevna.pages.tsarevna_page.admin.admin_list;
+package com.tsarevna.pages.tsarevna_page.admin.view_admin;
 
 import com.tsarevna.pages.tsarevna_page.admin.AdminPage;
-import com.tsarevna.pages.tsarevna_page.admin.admin_table.AdminTable;
 
 /**
  *
  * @author silaev
  */
-public class AdminListPage extends AdminPage{
-    
-    public AdminTable adminTable;
+public class ViewAdminPage extends AdminPage{
     
 }

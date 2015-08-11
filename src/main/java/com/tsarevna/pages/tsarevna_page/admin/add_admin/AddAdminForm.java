@@ -38,7 +38,7 @@ public class AddAdminForm extends UIBlock {
             adminName.enter(name);
         }
         if (!role.equals("null")) {
-            adminRole.equals(role);
+            adminRole.selectByVisibleText(role);
         }
         if (!password.equals("null")) {
             adminPassword.enter(password);
