@@ -12,11 +12,12 @@ Meta:
 @root_password admin
 
 Given авторизоваться с правами root
-When добавить администратора с параметрами: Имя <name>, Пароль <password>, Роль <role>
+When добавить администратора с параметрами: Имя <adminName>, Роль <role>, Пароль <password>, Повторение пароля <passwordCheck>
 Then в списке администраторов появился новый пользователь <name>
 
 Examples:
-name            |password |role
-admin_test_1    |123      |root(Полные права)
-operator_test_1 |123      |operator(Оператор/Менеджер)
-admin_test_1    |123      |admin(Технический администратор)
+name              |role                             |password |passwordCheck
+admin_test_1      |root(Полные права)               |123      |123
+operator_test_1   |operator(Оператор/Менеджер)      |123      |123
+admin_test_1      |admin(Технический администратор) |123      |123
+accountant_test_1 |accountant(Бухгалтер)            |123      |123

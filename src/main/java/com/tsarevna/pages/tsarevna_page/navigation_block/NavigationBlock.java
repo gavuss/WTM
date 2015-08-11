@@ -5,6 +5,7 @@
  */
 package com.tsarevna.pages.tsarevna_page.navigation_block;
 
+import com.tsarevna.pages.tsarevna_page.navigation_block.settings_dropdowm.SettingsDropdownMenu;
 import com.tsarevna.pages.tsarevna_page.navigation_block.user_dropdown.UserDropdownMenu;
 import com.tsarevna.pages.tsarevna_page.navigation_block.user_dropdown.UserMenuItems;
 import com.uisteps.thucydides.user.browser.pages.UIBlock;
@@ -19,10 +20,13 @@ import org.openqa.selenium.support.FindBy;
 public class NavigationBlock extends UIBlock {
 
       private UserDropdownMenu userDropdownMenu;
-      
+      private SettingsDropdownMenu settingsDropdownMenu;
+              
       @Step
       public UserMenuItems openUserMenu() {
           return userDropdownMenu.openUserMenu();
       }
+      
+      
            
 }
