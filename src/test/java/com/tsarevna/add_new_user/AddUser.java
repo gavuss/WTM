@@ -32,7 +32,17 @@ public class AddUser extends Story {
 
     @When("добавить пользователя с парамтерами: ФИО <fio>, Псевдоним <nickName>")
     public void добавить_пользователя_с_парамтерами(String fio, String nickName) {
+        verify
+                .that(user.onDisplayed(UserTable.class).userList.isEmpty())
+                .ifResultIsExpected("Пользователь будет добавлен")
+                .ifElse("Измените имя пользователя");
         user.addUser(fio, nickName);
+
+        //if (user.onDisplayed(UserTable.class).userList.isEmpty()) {
+        //  user.addUser(fio, nickName);
+        //} else {
+        //user.onDisplayed(AddUserPage.class).containsError(error);
+        //}
     }
 
     @Then("в списке пользователей появился новый пользователь <fio>")
